@@ -491,7 +491,10 @@ function renderRecipes() {
     filtered = filtered.filter(r =>
       r.title.toLowerCase().includes(q) ||
       r.description.toLowerCase().includes(q) ||
-      r.tag.toLowerCase().includes(q)
+      r.tag.toLowerCase().includes(q) ||
+      r.category.toLowerCase().includes(q) ||
+      r.ingredients.some(i => i.toLowerCase().includes(q)) ||
+      r.steps.some(s => s.toLowerCase().includes(q))
     );
   }
 
@@ -600,6 +603,8 @@ document.getElementById('searchInput').addEventListener('keydown', e => {
 });
 
 document.getElementById('searchInput').addEventListener('input', e => {
+  currentSearch = e.target.value;
+  renderRecipes();
   if (e.target.value === '') {
     currentSearch = '';
     renderRecipes();
