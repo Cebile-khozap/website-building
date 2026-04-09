@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nourish — Recipes for Every Body</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">Nourish</a>
+      <nav class="nav">
+        <a href="#">Recipes</a>
+        <a href="#">Meal Plans</a>
+        <a href="#">Nutrition</a>
+        <a href="#">About</a>
+      </nav>
+      <button class="btn-primary">Get Started</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-tag">Nutritionist-Approved</span>
+      <h1 class="hero-title">Recipes made for<br/><em>how you live</em></h1>
+      <p class="hero-subtitle">Discover wholesome meals tailored to your health goals — with step-by-step instructions for every dish.</p>
+      <div class="hero-search">
+        <input type="text" id="searchInput" placeholder="Search recipes..." />
+        <button class="btn-primary" onclick="handleSearch()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-section">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-category="all">All Recipes</button>
+      <button class="filter-btn" data-category="high-protein">High Protein</button>
+      <button class="filter-btn" data-category="plant-based">Plant-Based</button>
+      <button class="filter-btn" data-category="low-carb">Low Carb</button>
+      <button class="filter-btn" data-category="quick">Quick &amp; Easy</button>
+      <button class="filter-btn" data-category="gut-health">Gut Health</button>
+      <button class="filter-btn" data-category="heart-healthy">Heart Healthy</button>
+      <button class="filter-btn" data-category="diabetes">Diabetes-Friendly</button>
+    </div>
+  </section>
+
+  <!-- RECIPE GRID -->
+  <main class="main">
+    <div class="section-header">
+      <h2 class="section-title">Featured Recipes</h2>
+      <p class="recipe-count" id="recipeCount"></p>
+    </div>
+    <div class="recipe-grid" id="recipeGrid"></div>
+  </main>
+
+  <!-- RECIPE MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="recipeModal">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-image-wrap">
+        <img class="modal-image" id="modalImage" src="" alt="" />
+        <div class="modal-image-overlay">
+          <span class="modal-tag" id="modalTag"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span id="modalTime">&#9201; 30 min</span>
+          <span id="modalServings">&#127859; 2 servings</span>
+          <span id="modalDiff">&#11088; Easy</span>
+        </div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <div class="modal-sections">
+          <div class="modal-col">
+            <h3>Ingredients</h3>
+            <ul class="ingredients-list" id="modalIngredients"></ul>
+          </div>
+          <div class="modal-col">
+            <h3>Nutrition (per serving)</h3>
+            <div class="nutrition-grid" id="modalNutrition"></div>
+          </div>
+        </div>
+
+        <div class="instructions-section">
+          <h3>How to Prepare</h3>
+          <ol class="steps-list" id="modalSteps"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Nourish</span>
+        <p>Wholesome recipes for every lifestyle, crafted with care.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#">All Recipes</a>
+        <a href="#">Meal Plans</a>
+        <a href="#">Nutrition Guide</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Nourish. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
